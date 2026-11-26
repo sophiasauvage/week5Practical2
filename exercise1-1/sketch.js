@@ -1,36 +1,39 @@
 let randomColor
-//let xCoordinate =[]
-//let yCoordinate = []
-//let rectDimention = []
-let rectAmount
 let randomRect = []
 function setup(){
     createCanvas(600, 600)
      background(randomColour())
+        
+    for (let amount = 1; amount <= 100; amount += 1){
+   rectangleRandom()
+    }
 
 }
 function rectangleRandom(){
-    let coordX = {
+    let coordX =  {
         x: random(0, 600),
         y: random(0, 600),
         d: random(1, 30)
     }
     randomRect.push(coordX)
 
-//xCoordinate.push(random(0, 600))
-    //yCoordinate.push(random(0, 600))
-   // rectDimention.push(random())
-
-
 }
 function draw(){
-
-    rectangleRandom()
- 
+    background(255, 255, 0)
    for ( let i = 0; i < randomRect.length; i++){
-       console.log(randomRect[i].x)
+       if ([i] % 2 === 0)
+        fill(0)
+    else 
+    fill(255)
         rect(randomRect[i].x, randomRect[i].y, randomRect[i].d, randomRect[i].d)
 }
+if (keyIsPressed === true){
+    console.log("anything")
+    randomRect = []
+     for (let amount = 1; amount <= 100; amount += 1){
+   rectangleRandom()
+     }
+}     
 
 }
 
